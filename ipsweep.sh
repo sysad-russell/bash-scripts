@@ -8,7 +8,7 @@ host_sweep() {
 echo -e "\nNow running IPSweep: $(date)\n";
 echo -e "Thank you for using IPSweep: $(date)\n" | tee $HOME/host_up.txt >/dev/null;
 for ip in {1..254}; do
-ping -c 1 $range.$ip | awk -F " " '/64\ bytes/ {printf("%s\n", $4)}' | tr -d ":" | tee -a $HOME/host_up.txt >/dev/null &
+ping -c 1 $range.$ip | awk -F " " '/64\ bytes/ {printf("%s\n", $4)}' 2>/dev/null | tr -d ":" | tee -a $HOME/host_up.txt >/dev/null &
 done
 }
 
