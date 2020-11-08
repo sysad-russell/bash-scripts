@@ -13,7 +13,7 @@ done
 }
 
 #ssh_scan()
-#for addr in /home/isaiah/host_up.txt; do
+#for addr in $HOME/host_up.txt; do
 #su -l;
 #nmap -sS $addr -p 22 &
 #done
